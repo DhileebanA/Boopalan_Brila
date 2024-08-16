@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://media.istockphoto.com/id/1389573700/vector/modern-abstract-background-with-retro-pop-art-geometric-elements-and-pastel-colorful.jpg?s=612x612&w=0&k=20&c=faYyL-jOkhtqfBCxLA-9WXMQu_W5FA_EJtdzpdq8xrw=);
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+h1 {
+    margin-top: 0;
+    font-weight: bold;
+    color: #0f3551; /* Bright blue title */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #666;
+}
+
+input,
+select,
+textarea {
+    width: 96.5%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    transition: border-color 0.3s ease-in-out; /* Smooth border transition */
+}
+
+select{
+    width: 100%;
+}
+
+input:valid,
+select:valid,
+textarea:valid{
+    color: #f1c40f; /* Bright blue border on focus */
+    /* outline-color: #3498db; Bright blue border on focus */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    color: black;
+    border-color: #3498db; /* Bright blue border on focus */
+    outline-color: #3498db; /* Bright blue border on focus */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group.focused {
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.form-group.focused label {
+    color: #3498db; /* Bright blue label on focus */
+    transition: color 0.3s ease-in-out;
+}
+
+button[type="submit"] {
+    background-color: #f1c40f; /* Warm orange button */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Smooth background transition */
+}
+
+button[type="submit"]:hover {
+    background-color: #93f16b; /* Deep orange button on hover */
+    color: #2a6611;
+}
+
+button[type="submit"]:active {
+    background-color: #e67e73; /* Deep orange button on active */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on active */
+}
+
+/* Animation effects */
+.form-group {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.form-group.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-group.animate+.form-group {
+    transition-delay: 0.1s;
+}
+
+.form-group.animate + .form-group + .form-group {
+    transition-delay: 0.2s;
+}

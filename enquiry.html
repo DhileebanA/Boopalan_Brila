@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Enquiry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://media.istockphoto.com/id/1389573700/vector/modern-abstract-background-with-retro-pop-art-geometric-elements-and-pastel-colorful.jpg?s=612x612&w=0&k=20&c=faYyL-jOkhtqfBCxLA-9WXMQu_W5FA_EJtdzpdq8xrw=);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            /* White background */
+            border: 1px solid #ddd;
+            /* Light gray border */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Soft shadow */
+        }
+
+        h1 {
+            margin-top: 0;
+            font-weight: bold;
+            color: #0f3551;
+            /* Bright blue title */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 96.5%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            /* Light gray border */
+            border-radius: 5px;
+            /* Rounded corners */
+            transition: border-color 0.3s ease-in-out;
+            /* Smooth border transition */
+        }
+
+        select {
+            width: 100%;
+        }
+
+        input:valid,
+        select:valid,
+        textarea:valid {
+            color: #f1c40f;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            color: black;
+            border-color: #3498db;
+            /* Bright blue border on focus */
+            outline-color: #3498db;
+            /* Bright blue border on focus */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group.focused {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .form-group.focused label {
+            color: #3498db;
+            /* Bright blue label on focus */
+            transition: color 0.3s ease-in-out;
+        }
+
+        button[type="submit"] {
+            background-color: #f1c40f;
+            /* Warm orange button */
+            color: #fff;
+            /* White text */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            /* Rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            /* Smooth background transition */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #93f16b;
+            /* Deep orange button on hover */
+            color: #2a6611;
+        }
+
+        button[type="submit"]:active {
+            background-color: #e67e73;
+            /* Deep orange button on active */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* Deeper shadow on active */
+        }
+
+        /* Animation effects */
+        .form-group {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .form-group.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-group.animate+.form-group {
+            transition-delay: 0.1s;
+        }
+
+        .form-group.animate+.form-group+.form-group {
+            transition-delay: 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Customer Enquiry Form</h1>
+        <form
+            action="https://script.google.com/macros/s/AKfycbxtxXc5AyGH65YyhUVAbEWGjmtmZIZzxnUN0JtDCGH3q-ysLdcLMI2fFdrCj5rfhAE/exec"
+            method="post">
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Customer Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select name="role" id="role" required>
+                    <option value="">Select Role</option>
+                    <option value="md">Managing Director</option>
+                    <option value="prop">Proprietor</option>
+                    <option value="staff">Staff & Others</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mob">Customer Mobile No</label>
+                <input type="tel" id="mob" name="mob" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea name="address" id="address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="product">Product</label>
+                <select name="product" id="product" required>
+                    <option value="">Select Product</option>
+                    <option value="cctv">CCTV</option>
+                    <option value="it">IT</option>
+                    <option value="appliance">Home Appliances</option>
+                    <option value="cctv_it">Both CCTV & IT</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="enquiry">Enquiry</label>
+                <textarea name="enquiry" id="enquiry" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="status">Enquiry Status</label>
+                <select name="status" id="status" required>
+                    <option value="">Select Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- animation script -->
+    <script>
+        const formGroups = document.querySelectorAll('.form-group');
+        formGroups.forEach((formGroup) => {
+            formGroup.addEventListener('focusin', () => {
+                formGroup.classList.add('focused');
+            });
+            formGroup.addEventListener('focusout', () => {
+                formGroup.classList.remove('focused');
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const formGroups = document.querySelectorAll('.form-group');
+            formGroups.forEach((formGroup) => {
+                formGroup.classList.add('animate');
+            });
+        });
+    </script>
+</body>
+
+</html>

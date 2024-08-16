@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://media.istockphoto.com/id/1389573700/vector/modern-abstract-background-with-retro-pop-art-geometric-elements-and-pastel-colorful.jpg?s=612x612&w=0&k=20&c=faYyL-jOkhtqfBCxLA-9WXMQu_W5FA_EJtdzpdq8xrw=);
+            /* Warm orange background */
+            transition: background-color 0.5s ease;
+            /* Add a transition to the body background color */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.5s ease;
+            /* Add a transition to the container box shadow */
+        }
+
+        .container h1 {
+            color: #0f3551;
+            margin-bottom: 10px;
+        }
+
+        .report-table {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            /* Blue header background */
+            color: #fff;
+            transition: background-color 0.5s ease;
+            /* Add a transition to the header background color */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+            transition: background-color 0.2s ease;
+            /* Add a transition to the row hover effect */
+        }
+
+        /* Add some visual flair */
+        .report-table thead tr {
+            border-bottom: 2px solid #0f3551;
+            /* Dark blue border */
+            animation: fadeIn 1s ease;
+            /* Add a fade-in animation to the header */
+        }
+
+        .report-table tbody tr {
+            border-bottom: 1px solid #ddd;
+            animation: slideIn 1s ease;
+            /* Add a slide-in animation to the rows */
+        }
+
+        .report-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .report-table td {
+            transition: background-color 0.2s ease;
+        }
+
+        .report-table td:hover {
+            background-color: #f1c40f;
+            /* Warm orange hover effect */
+            transition: background-color 0.2s ease;
+            /* Add a transition to the cell hover effect */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Customer Enquiry Report</h1>
+        <div class="report-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Customer Name</th>
+                        <th>Role</th>
+                        <th>Customer Mobile No</th>
+                        <th>Company Name</th>
+                        <th>Address</th>
+                        <th>Product</th>
+                        <th>Enquiry</th>
+                        <th>Enquiry Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be rendered here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        let SHEET_ID = '1ztvfzxWzBcCwHX54gLb70X-uUhp4-XPEoxWEcFZJWi0';
+        let SHEET_TITLE = 'Sheet1';
+        let SHEET_RANGE = 'A2:J10';
+        let FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + SHEET_TITLE + '&range=' + SHEET_RANGE);
+        console.log(FULL_URL)
+        fetch(FULL_URL)
+            .then(res => res.text())
+            .then(res => {
+                let data = JSON.parse(res.substr(47).slice(0, -2));
+                let tableBody = document.querySelector('tbody')
+
+                // Render data to the table
+                data.table.rows.map((row) => {
+                    const tr = document.createElement('tr');
+
+                    // row.c contains the cells in the row
+                    tr.innerHTML = `
+                    <td>${row.c[0] ? row.c[0].v : ''}</td>
+                    <td>${row.c[1] ? row.c[1].f : ''}</td>
+                    <td>${row.c[2] ? row.c[2].v : ''}</td>
+                    <td>${row.c[3] ? row.c[3].v : ''}</td>
+                    <td>${row.c[4] ? row.c[4].v : ''}</td>
+                    <td>${row.c[5] ? row.c[5].v : ''}</td>
+                    <td>${row.c[6] ? row.c[6].v : ''}</td>
+                    <td>${row.c[7] ? row.c[7].v : ''}</td>
+                    <td>${row.c[8] ? row.c[8].v : ''}</td>
+                `;
+                    tableBody.appendChild(tr);
+                })
+            });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        /* Global Styles */
+
+        /* Global Styles */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Open Sans, sans-serif;
+            line-height: 1.6;
+            color: #455A64;
+            background-color: #FFFFFF;
+        }
+
+        h1,
+        h2 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        a:hover {
+            color: #FFC107;
+        }
+
+        /* Header Styles */
+
+        header {
+            background-color: #455A64;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+
+        /* Hero Styles */
+
+        .hero {
+            background-color: #FFC107;
+            padding: 40px;
+            text-align: center;
+            animation: heroAnimation 2s ease-in-out;
+        }
+
+        .background-image {
+            background-image: url('https://via.placeholder.com/1500x500');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            width: 100%;
+            animation: backgroundImageAnimation 2s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            animation: heroTitleAnimation 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            animation: heroTextAnimation 2s ease-in-out;
+        }
+
+        /* CTA Styles */
+
+        .cta {
+            background-color: #FFFFFF;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .enquiry-btn,
+        .report-btn {
+            background-color: #4CAF50;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            animation: ctaButtonAnimation 2s ease-in-out;
+        }
+
+        .enquiry-btn:hover,
+        .report-btn:hover {
+            background-color: #FFC107;
+        }
+
+        .enquiry-btn {
+            margin-right: 20px;
+        }
+
+        /* Features Styles */
+
+        .features {
+            background-color: #FFFFFF;
+            padding: 40px;
+        }
+
+        .features h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            animation: featuresTitleAnimation 2s ease-in-out;
+        }
+
+        .features ul {
+            margin-bottom: 40px;
+            animation: featuresListAnimation 2s ease-in-out;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer Styles */
+
+        footer {
+            background-color: #455A64;
+            padding: 20px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .social-media {
+            margin-bottom: 20px;
+        }
+
+        .social-media li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-media a {
+            color: #FFFFFF;
+        }
+
+        .social-media a:hover {
+            color: #FFC107;
+        }
+
+        /* Animations */
+
+        @keyframes heroAnimation {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundImageAnimation {
+            0% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes heroTitleAnimation {
+            0% {
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes heroTextAnimation {
+            0% {
+                transform: translateY(50%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes ctaButtonAnimation {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes featuresTitleAnimation {
+            0% {
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes featuresListAnimation {
+            0% {
+                transform: translateY(50%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+
+        @media only screen and (max-width: 768px) {
+            .hero {
+                padding: 20px;
+            }
+
+            .background-image {
+                height: 300px;
+            }
+
+            .cta {
+                flex-direction: column;
+            }
+
+            .enquiry-btn,
+            .report-btn {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .features {
+                padding: 20px;
+            }
+
+            .features ul {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .hero {
+                padding: 10px;
+            }
+
+            .background-image {
+                height: 200px;
+            }
+
+            .cta {
+                flex-direction: column;
+            }
+
+            .enquiry-btn,
+            .report-btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .features {
+                padding: 10px;
+            }
+
+            .features ul {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* login */
+        .login {
+            scale: 0;
+            background-color: transparent;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s linear, scale 0s linear;
+        }
+
+        .login-form {
+            scale: 0;
+            position: fixed;
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s linear;
+        }
+
+        .login-form h2 {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #0f3551;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .login-form input[type="text"]:focus,
+        .login-form input[type="password"]:focus {
+            border: 1px solid #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form button[type="submit"] {
+            width: 100%;
+            height: 40px;
+            background-color: #f1c40f;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-form button[type="submit"]:hover {
+            background-color: #3498db;
+        }
+
+        .login-form p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .login-form a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .login-form a:hover {
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">L</div>
+        <p class="tagline">Get Insights and Take Action</p>
+    </header>
+    <section class="hero">
+        <div class="background-image"></div>
+        <h1>Unlock Data-Driven Decision Making</h1>
+        <p>Get instant access to actionable insights and make informed decisions</p>
+    </section>
+    <section class="cta">
+        <a href="enquiry.html"><button class="enquiry-btn">Enquire Now</button></a>
+        <button class="report-btn" onclick="showLogin()">Get Your Report</button>
+    </section>
+    <section class="features">
+        <h2>What You'll Get</h2>
+        <ul>
+            <li>Actionable insights to inform your decisions</li>
+            <li>Real-time data to track your progress</li>
+            <li>Expert analysis to help you optimize</li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2023 Landing Page</p>
+        <ul class="social-media">
+            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        </ul>
+        <p>Contact Us: <a href="mailto:info@landingpage.com">info@landingpage.com</a> | <a
+                href="tel:+1234567890">+1234567890</a></p>
+    </footer>
+    <div id="login" class="login">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form>
+                <input type="text" placeholder="Username" id="username" required>
+                <input type="password" placeholder="Password" id="password" required>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        function showLogin() {
+            document.getElementById("login").style.scale = 1;
+            document.getElementById("login").style.backgroundColor = "rgba(104, 104, 104, 0.475)";
+            document.querySelector(".login .login-form").style.scale = 1;
+        }
+        const form = document.getElementById('login');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === 'admin' && password === 'admin@123') {
+                window.location.href = 'report.html';
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+    </script>
+</body>
+
+</html>
